@@ -650,6 +650,7 @@ GameObject:
   - component: {fileID: 1013289226}
   - component: {fileID: 1013289225}
   - component: {fileID: 1013289224}
+  - component: {fileID: 1013289228}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -747,6 +748,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1013289228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013289223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: bdab260c35e94b4468a09f34b14c67fa, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &1142804722
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,6 +914,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eddf1066cd5ae7b4c8f211f627721692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turnAround:
+    m_Name: Turn Around
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 73683886-444d-4e45-852f-29df1992a4d9
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Left&right
+      m_Id: 507589a9-7c9c-4c3e-835c-0d5a1101022b
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Turn Around
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: a0e7dc2f-872f-4972-94af-73cfab124672
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Turn Around
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: daef8824-4b22-44b2-81b9-44839529626f
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Turn Around
+      m_Flags: 8
+    m_Flags: 0
 --- !u!23 &1245065679
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -948,6 +1014,7 @@ GameObject:
   - component: {fileID: 1793335186}
   - component: {fileID: 1793335185}
   - component: {fileID: 1793335184}
+  - component: {fileID: 1793335190}
   m_Layer: 0
   m_Name: Fjenden
   m_TagString: Untagged
@@ -967,6 +1034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bace9df0eb34d74bb619d54ce5e986e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 1793335190}
 --- !u!54 &1793335185
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1085,6 +1153,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!195 &1793335190
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793335183}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 1.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
