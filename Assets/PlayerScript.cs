@@ -19,7 +19,6 @@ public class PlayerScript : MonoBehaviour
     {
         // læs input
         Vector2 moveInput = moveAction.ReadValue<Vector2>();
-
         // skab kopi
         Vector3 newVelocity = rb.linearVelocity;
         // opdaterer vi værdier
