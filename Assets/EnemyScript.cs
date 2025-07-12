@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
@@ -12,5 +13,13 @@ public class EnemyScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+         Destroy(gameObject);
+        }
     }
 }

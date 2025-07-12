@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class ShootingScript : MonoBehaviour
 {
     public GameObject bullet;
+    public float bulletSpeed = 5f;
 
     public InputAction shoot;
 
@@ -23,7 +24,11 @@ public class ShootingScript : MonoBehaviour
         cooldownLeft -= Time.deltaTime;
         if (shoot.WasPressedThisFrame() && cooldownLeft <= 0)
         {
-            Instantiate(bullet, transform.position, Quaternion.identity);
+            GameObject bulletClone = Instantiate(bullet, transform.position, Quaternion.identity);
+            Rigidbody bulletRb = bulletClone.GetComponent<Rigidbody>();
+            bulletRb.linearVelocity = transform.forward * bulletSpeed;
+            
+            
             cooldownLeft = cooldown;
         }
         
