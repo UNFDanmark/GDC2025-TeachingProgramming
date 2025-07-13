@@ -7,7 +7,8 @@ public class ShootingScript : MonoBehaviour
     public float bulletSpeed = 5f;
 
     public InputAction shoot;
-
+    public Animator animator;
+    
     public float cooldown = 0.5f;
     float cooldownLeft;
     
@@ -28,8 +29,8 @@ public class ShootingScript : MonoBehaviour
             Rigidbody bulletRb = bulletClone.GetComponent<Rigidbody>();
             bulletRb.linearVelocity = transform.forward * bulletSpeed;
             
-            
             cooldownLeft = cooldown;
+            animator.SetTrigger("Shoot");
         }
         
     }

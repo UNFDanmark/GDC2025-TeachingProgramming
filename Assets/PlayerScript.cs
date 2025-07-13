@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour
     public int speed = 18; 
     Rigidbody rb;
 
+    public Animator animator;
     public InputAction moveAction;
     
     void Start()
@@ -35,5 +36,7 @@ public class PlayerScript : MonoBehaviour
         
         // opdater rigtige hastighed
         rb.linearVelocity = newVelocity;
+        
+        animator.SetFloat("Speed", rb.linearVelocity.magnitude);
     }
 }
